@@ -1,1 +1,5 @@
-*.csv
+data/train.csv
+data/cleaned_train.csv
+data/test.csv
+data/sample_submission.csv
+streamlit_app/xgb_model.pkl
