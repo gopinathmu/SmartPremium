@@ -1,0 +1,15 @@
+# Ignore large data files
+/data/*.csv
+
+# Ignore virtual environment and DLLs
+/venv/
+*.dll
+
+# Ignore model files
+/streamlit_app/*.pkl
+
+# Ignore common Python cache files
+__pycache__/
+*.pyc
+.DS_Store
+.ipynb_checkpoints/
