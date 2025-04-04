@@ -16,7 +16,6 @@ except FileNotFoundError:
 
 st.title("SmartPremium: Insurance Cost Prediction")
 
-# Input fields
 age = st.number_input("Age", min_value=18, max_value=100, value=30)
 gender = st.selectbox("Gender", ["Male", "Female"])
 income = st.number_input("Annual Income", min_value=1000, max_value=200000, value=30000)
@@ -28,19 +27,14 @@ credit_score = st.number_input("Credit Score", min_value=300, max_value=850, val
 insurance_duration = st.number_input("Insurance Duration (years)", min_value=1, max_value=10, value=5)
 smoking_status = st.selectbox("Smoking Status", ["Non-Smoker", "Smoker"])
 
-# Convert categorical variables
 gender = 1 if gender == "Male" else 0
 smoking_status = 1 if smoking_status == "Smoker" else 0
 
-# **Expand Features** (Assuming one-hot encoding or extra features were used)
-# Add missing dummy variables or other transformations that match training data
 extra_features = np.zeros(18)  # Add placeholder values for missing features
 
-# Final feature array
 input_features = np.concatenate(([age, gender, income, dependents, health_score, claims,
                                   vehicle_age, credit_score, insurance_duration, smoking_status], extra_features))
 
-# Reshape for prediction
 input_features = input_features.reshape(1, -1)  # Ensure 2D array shape
 
 if st.button("Predict Premium"):
