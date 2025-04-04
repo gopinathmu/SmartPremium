@@ -3,7 +3,6 @@ import joblib
 import numpy as np
 import os
 
-# Load model
 current_dir = os.path.dirname(os.path.abspath(__file__))
 model_path = os.path.join(current_dir, "xgb_model.pkl")
 
